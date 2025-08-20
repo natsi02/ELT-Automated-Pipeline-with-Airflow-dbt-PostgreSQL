@@ -10,6 +10,7 @@ services:
       - "5432:5432"
     volumes:
       - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/airflow_init.sql:/docker-entrypoint-initdb.d/airflow_init.sql
     networks:
       - my_network
 
@@ -22,10 +23,14 @@ services:
       - "8080:8080"
     volumes:
       - ./airflow/dags:/opt/airflow/dags
+      - ./request-script:/opt/airflow/request-script
+      - ./data/raw:/opt/airflow/data/raw
     depends_on:
       - postgres
     networks:
       - my_network
+    command: >
+      bash -c "airflow db migrate && airflow standalone"
 
 networks:
   my_network:
