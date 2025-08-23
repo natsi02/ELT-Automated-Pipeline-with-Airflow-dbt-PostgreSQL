@@ -25,6 +25,9 @@ services:
       - ./airflow/dags:/opt/airflow/dags
       - ./request-script:/opt/airflow/request-script
       - ./data/raw:/opt/airflow/data/raw
+      # - ./dbt/my_project:/opt/dbt/my_project
+      # - ./dbt/profiles.yml:/opt/dbt/profiles.yml
+      - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       - postgres
     networks:
