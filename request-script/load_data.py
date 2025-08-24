@@ -5,7 +5,7 @@ def connect_to_db():
     print("Connecting to the PostgresSQL database...")
     try:
         conn = psycopg2.connect(
-            host="postgres",
+            host="db",
             port=5432,
             database="database",
             user="postgres",
@@ -21,8 +21,8 @@ def create_table_query(conn):
     try:
         cursor = conn.cursor()
         cursor.execute("""
-            CREATE SCHEMA IF NOT EXISTS raw;
-            CREATE TABLE IF NOT EXISTS raw.online_sales_data (
+            CREATE SCHEMA IF NOT EXISTS staging;
+            CREATE TABLE IF NOT EXISTS staging.online_sales_data (
                 id SERIAL PRIMARY KEY,
                 invoice_no VARCHAR,
                 stock_code VARCHAR,
@@ -57,7 +57,7 @@ def load_data_to_db(df, conn):
         cursor = conn.cursor()
         for _, row in df.iterrows():
             cursor.execute("""
-                INSERT INTO raw.online_sales_data (
+                INSERT INTO staging.online_sales_data (
                     invoice_no, stock_code, description, quantity, invoice_date, unit_price,
                     customer_id, country, discount, payment_method, shipping_cost, category,
                     sales_channel, return_status, shipment_provider, warehouse_location, order_priority
