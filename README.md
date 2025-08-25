@@ -1,19 +1,20 @@
 # Online Sales ELT Automated Pipeline
 This project implements a containerized ELT (Extract, Load, Transform) pipeline for online sales data using Apache Airflow, dbt, PostgreSQL, and Apache Superset.
 
-## 📌 **Project Overview**
+## **Project Overview**
 This project demonstrates a production-style Data Engineering pipeline using modern data stack.
 It ingests online sales data from Kaggle, orchestrates extraction, loading and transforms with Apache Airflow, transform 
 the raw data into analystics-ready models within a dedicated data mart schema using dbt, and serves insights through interactive Apache Superset dashboards
 
 **Goal:** Simulate a real-world ELT pipeline for an e-commerce company to enable better reporting and decision-making.
 
-## 🛈 Data Source
+## **Data Source**
 Online Sales data from Kaggle : [Online Sales Dataset](https://www.kaggle.com/datasets/yusufdelikkaya/online-sales-dataset/data)
 
 <img width="780" height="541" alt="Image" src="https://github.com/user-attachments/assets/36369feb-d13d-446c-9519-389715c8619a" />
 
-## 🏗️ **Architecture Overview**
+## **Architecture Overview**
+
 - **Data Source:** CSV file from Kaggle (simulating daily updates; in a real scenario, data would be pulled from an API each day)
 - **Orchestration:** Apache Airflow
 - **Ingestion:** Python script loads CSV into PostgreSQL (`staging` schema)
@@ -21,7 +22,7 @@ Online Sales data from Kaggle : [Online Sales Dataset](https://www.kaggle.com/da
 - **Visualization:** Apache Superset dashboards
 - **Containerization:** All components run in Docker containers via `docker-compose`
 
-## ⚙️ **Pipeline Flow**
+## **Pipeline Flow**
 1. **Daily Data Update:**  
    The pipeline is scheduled to run every day, simulating an automated daily data pull from an API (currently, the CSV is updated manually to mimic this process).
 2. **Extract & Load:**  
@@ -31,7 +32,7 @@ Online Sales data from Kaggle : [Online Sales Dataset](https://www.kaggle.com/da
 4. **Visualize:**  
    Superset connects to PostgreSQL for interactive dashboards and reporting.
 
-## ⚙️ Tech Stack
+## **Tech Stack**
 - Python → Data extraction & loading (Pandas + psycopg2)
 - Postgres → Data warehouse (raw + analytics schemas)
 - dbt → SQL transformations, models, lineage, data quality tests
@@ -39,14 +40,14 @@ Online Sales data from Kaggle : [Online Sales Dataset](https://www.kaggle.com/da
 - Docker Compose → Containerized setup for reproducibility
 - Apache Superset → Interactive dashboards & BI visualization
 
-## ✅ Features
+## **Features**
 - End-to-end ELT pipeline with modern tools
 - Orchestrated with Airflow (daily schedule + retries)
 - dbt lineage & tests for data quality
 - Dockerized for easy setup (1 command to start all services)
 - BI dashboard for stakeholders
 
-## 📊 Dashboard
+## **Dashboard**
 <img width="1892" height="934" alt="Image" src="https://github.com/user-attachments/assets/b5e7c19d-fa23-4412-b416-6c672d6aa2ae" />
 
 ## **Getting Started**
@@ -93,8 +94,8 @@ The pipeline is orchestrated using an Apache Airflow DAG (`airflow/dags/orchestr
 - **Superset:** Create new dashboards or charts as needed.
 
 ## **Acknowledgements**
-- [Kaggle] (https://www.kaggle.com/) for the dataset
-- [dbt Labs] (https://www.getdbt.com/)
-- [Apache Airflow] (https://airflow.apache.org/)
-- [Apache Superset] (https://superset.apache.org/)
-- **My sincere thanks to [Calvin Yoon Channel] (https://www.youtube.com/@cyprojects) for providing such a valuable resource and inspiration.**
+- [Kaggle](https://www.kaggle.com/) for the dataset
+- [dbt Labs](https://www.getdbt.com/)
+- [Apache Airflow](https://airflow.apache.org/)
+- [Apache Superset](https://superset.apache.org/)
+- **My sincere thanks to [Calvin Yoon Channel](https://www.youtube.com/@cyprojects/) for providing such a valuable resource and inspiration.**
