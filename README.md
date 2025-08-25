@@ -14,7 +14,9 @@ Online Sales data from Kaggle : [Online Sales Dataset](https://www.kaggle.com/da
 
 
 ## **Architecture Overview**
+
 <img width="780" height="541" alt="Image" src="https://github.com/user-attachments/assets/36369feb-d13d-446c-9519-389715c8619a" />
+
 - **Data Source:** CSV file from Kaggle (simulating daily updates; in a real scenario, data would be pulled from an API each day)
 - **Orchestration:** Apache Airflow
 - **Ingestion:** Python script loads CSV into PostgreSQL (`staging` schema)
