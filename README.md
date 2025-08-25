@@ -7,6 +7,7 @@ the raw data into analystics-ready models within a dedicated data mart schema us
 **Goal:** Simulate a real-world ELT pipeline for an e-commerce company to enable better reporting and decision-making.
 
 ## 🏗️ Project Architecture
+<img width="773" height="501" alt="Image" src="https://github.com/user-attachments/assets/1063f540-359b-405f-8fae-d23781ffba1a" />
 
 ## ⚙️ Tech Stack
 - Python → Data extraction & loading (Pandas + SQLAlchemy)
