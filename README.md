@@ -12,6 +12,7 @@ the raw data into analystics-ready models within a dedicated data mart schema us
 Online Sales data from Kaggle : [Online Sales Dataset](https://www.kaggle.com/datasets/yusufdelikkaya/online-sales-dataset/data)
 
 <img width="780" height="541" alt="Image" src="https://github.com/user-attachments/assets/36369feb-d13d-446c-9519-389715c8619a" />
+
 ## 🏗️ **Architecture Overview**
 - **Data Source:** CSV file from Kaggle (simulating daily updates; in a real scenario, data would be pulled from an API each day)
 - **Orchestration:** Apache Airflow
@@ -19,6 +20,7 @@ Online Sales data from Kaggle : [Online Sales Dataset](https://www.kaggle.com/da
 - **Transformation:** dbt models create marts in PostgreSQL
 - **Visualization:** Apache Superset dashboards
 - **Containerization:** All components run in Docker containers via `docker-compose`
+
 ## ⚙️ **Pipeline Flow**
 1. **Daily Data Update:**  
    The pipeline is scheduled to run every day, simulating an automated daily data pull from an API (currently, the CSV is updated manually to mimic this process).
@@ -95,4 +97,4 @@ The pipeline is orchestrated using an Apache Airflow DAG (`airflow/dags/orchestr
 - [dbt Labs] (https://www.getdbt.com/)
 - [Apache Airflow] (https://airflow.apache.org/)
 - [Apache Superset] (https://superset.apache.org/)
-- **Special thanks to [Calvin Yoon clips] on YouTube for the learning source and inspiration.**
+- **My sincere thanks to [Calvin Yoon Channel] (https://www.youtube.com/@cyprojects) for providing such a valuable resource and inspiration.**
