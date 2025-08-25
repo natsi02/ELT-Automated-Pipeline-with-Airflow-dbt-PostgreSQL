@@ -1,5 +1,10 @@
 # Online Sales ELT Automated Pipeline with Airflow, dbt and PostgreSQL
 ## 📌 Project Overview
+This project demonstrates a production-style Data Engineering pipeline using modern data stack.
+It ingests online sales data from Kaggle, orchestrates extraction, loading and transforms with Apache Airflow, transform 
+the raw data into analystics-ready models within a dedicated data mart schema using dbt, and serves insights through interactive Apache Superset dashboards
+
+**Goal:** Simulate a real-world ELT pipeline for an e-commerce company to enable better reporting and decision-making.
 
 ## 🏗️ Project Architecture
 
