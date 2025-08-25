@@ -20,7 +20,7 @@ default_args = {
 dag = DAG(
     dag_id='online-sales-ingest-dbt-orchestrator',
     default_args=default_args,
-    schedule=timedelta(weeks=1)
+    schedule=timedelta(days=1)
 )
 
 with dag:
